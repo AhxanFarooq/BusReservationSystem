@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\UserInterface",
+    "\\UserInterface\\AdminUI",
+    "\\UserInterface\\CustomerUI"
+  ],
+  "SelectedNode": "\\UserInterface\\CustomerUI\\LoginForm.cs",
+  "PreviewInSolutionExplorer": false
+}

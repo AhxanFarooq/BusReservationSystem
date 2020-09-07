@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusReservationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BusInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusNo" Type="varchar" MaxLength="50" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+    <Property Name="DepartureTime" Type="varchar" MaxLength="50" />
+    <Property Name="ArivalTime" Type="varchar" MaxLength="50" />
+    <Property Name="BusClass" Type="varchar" MaxLength="50" />
+    <Property Name="Fare" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="FatherName" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="custId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SeatInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="BusId" Type="int" />
+    <Property Name="seatNo" Type="int" />
+    <Property Name="custId" Type="int" />
+  </EntityType>
+  <EntityType Name="TicketDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="custId" Type="int" />
+    <Property Name="dateOfTicket" Type="datetime" />
+    <Property Name="seatNo" Type="varchar" MaxLength="50" />
+    <Property Name="BusId" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BusReservationModelStoreContainer">
+    <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BusInfo" EntityType="Self.BusInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TicketDetail" EntityType="Self.TicketDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

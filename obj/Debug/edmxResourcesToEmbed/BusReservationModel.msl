@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusResModelStoreContainer" CdmEntityContainer="AirlineDbEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="BusResModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="BusResModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="Ticket_id" ColumnName="Ticket_id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="DateOfJourney" ColumnName="DateOfJourney" />
+          <ScalarProperty Name="BusId" ColumnName="BusId" />
+          <ScalarProperty Name="SeatNo" ColumnName="SeatNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bus_Details">
+      <EntityTypeMapping TypeName="BusResModel.Bus_Details">
+        <MappingFragment StoreEntitySet="Bus_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BusName" ColumnName="BusName" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ArivelTime" ColumnName="ArivelTime" />
+          <ScalarProperty Name="Departure" ColumnName="Departure" />
+          <ScalarProperty Name="BusClass" ColumnName="BusClass" />
+          <ScalarProperty Name="BusCharges" ColumnName="BusCharges" />
+          <ScalarProperty Name="Seat" ColumnName="Seat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_detail">
+      <EntityTypeMapping TypeName="BusResModel.Customer_detail">
+        <MappingFragment StoreEntitySet="Customer_detail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_login">
+      <EntityTypeMapping TypeName="BusResModel.Customer_login">
+        <MappingFragment StoreEntitySet="Customer_login">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

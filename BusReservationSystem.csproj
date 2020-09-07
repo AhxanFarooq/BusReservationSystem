@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3A321B5-1225-4BBE-9BD8-1D97B0742190}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BusReservationSystem</RootNamespace>
+    <AssemblyName>BusReservationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminLogin.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusInfo.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusReservation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusReservation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusReservation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusReservation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusReservation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresistenceLayer\DBAccess.cs" />
+    <Compile Include="SeatInfo.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketDetail.cs">
+      <DependentUpon>BusReservation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AddBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AddBuses.Designer.cs">
+      <DependentUpon>AddBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AdminLogins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AdminLogins.Designer.cs">
+      <DependentUpon>AdminLogins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageBookings.Designer.cs">
+      <DependentUpon>ManageBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Complaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Complaints.Designer.cs">
+      <DependentUpon>Complaints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageBuses.Designer.cs">
+      <DependentUpon>ManageBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AdminUI\ManageCustomer.Designer.cs">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\SelectSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\SelectSeat.Designer.cs">
+      <DependentUpon>SelectSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerDetail.Designer.cs">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerMenu.Designer.cs">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerTicketReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\CustomerTicketReservation.Designer.cs">
+      <DependentUpon>CustomerTicketReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\TicketInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\TicketInfo.Designer.cs">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\ViewTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\ViewTicket.Designer.cs">
+      <DependentUpon>ViewTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Prebookseats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CustomerUI\Prebookseats.Designer.cs">
+      <DependentUpon>Prebookseats.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserInterface\AdminUI\AddBuses.resx">
+      <DependentUpon>AddBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\AdminLogins.resx">
+      <DependentUpon>AdminLogins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\ManageBookings.resx">
+      <DependentUpon>ManageBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\Complaints.resx">
+      <DependentUpon>Complaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\ManageBuses.resx">
+      <DependentUpon>ManageBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AdminUI\ManageCustomer.resx">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\SelectSeat.resx">
+      <DependentUpon>SelectSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\CustomerDetail.resx">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\CustomerMenu.resx">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\CustomerTicketReservation.resx">
+      <DependentUpon>CustomerTicketReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\TicketInfo.resx">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\ViewTicket.resx">
+      <DependentUpon>ViewTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CustomerUI\Prebookseats.resx">
+      <DependentUpon>Prebookseats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="BusReservation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BusReservation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BusReservation.edmx.diagram">
+      <DependentUpon>BusReservation.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\armchairRed.png" />
+    <None Include="Images\armchairGreen.png" />
+    <None Include="Images\armchairBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back Arrow_50px.png" />
+    <None Include="Resources\icons8_Home_161.png" />
+    <None Include="Resources\icons8_Logout_Rounded_Left_16.png" />
+    <None Include="Resources\icons8_Phone_16.png" />
+    <None Include="Resources\icons8_User_161.png" />
+    <None Include="Resources\icons8_Home_16.png" />
+    <None Include="Resources\New Ticket_100px.png" />
+    <None Include="Resources\Ticket_100px.png" />
+    <None Include="Resources\Delete Ticket_100px.png" />
+    <None Include="Resources\Waiting Room_100px1.png" />
+    <None Include="Resources\icons8_Ticket_64.png" />
+    <None Include="Resources\icons8_New_Ticket_64.png" />
+    <None Include="Resources\Waiting Room_100px.png" />
+    <None Include="Resources\woman-reading.png" />
+    <None Include="Resources\icons8_Logout_Rounded_Left_32.png" />
+    <None Include="Resources\icons8_Phone_32.png" />
+    <None Include="Resources\icons8_User_32.png" />
+    <None Include="Resources\icons8_User_16.png" />
+    <None Include="Resources\icons8_Home_32.png" />
+    <None Include="Resources\Home_50px.png" />
+    <None Include="Resources\Home_100px.png" />
+    <None Include="Resources\14g5VJ.jpg" />
+    <None Include="Resources\unnamed-2.jpg" />
+    <None Include="Resources\Menu_100px.png" />
+    <None Include="Resources\Back To_100px.png" />
+    <None Include="Resources\114g5VJ.jpg" />
+    <None Include="Resources\334ae9260f6d1f57a593445a0c6ca540--street-art-incredible-india.jpg" />
+    <None Include="Resources\Secure_100px.png" />
+    <None Include="Resources\Male User_100px.png" />
+    <None Include="Resources\Subtract_100px.png" />
+    <None Include="Resources\Delete_100px.png" />
+    <None Include="Resources\Password_100px.png" />
+    <None Include="Resources\Account_100px1.png" />
+    <None Include="Resources\unnamed-12.jpg" />
+    <None Include="Images\8344113-13073293.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waste_50px.png" />
+    <None Include="Resources\Bad Taxi Driver_50px.png" />
+    <None Include="Resources\Driver_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1565797.png" />
+    <None Include="Resources\Air Force Commander Female_48px.png" />
+    <None Include="Resources\Password_50px.png" />
+    <None Include="Resources\Email_50px.png" />
+    <None Include="Resources\iPhone_50px.png" />
+    <None Include="Resources\Change User_50px.png" />
+    <None Include="Resources\Forward Button_50px1.png" />
+    <None Include="Resources\Forward Button_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Two Tickets_50px.png" />
+    <None Include="Resources\New Ticket_50px.png" />
+    <None Include="Resources\Waiting Room_50px.png" />
+    <None Include="Resources\icons8_Booking_16.png" />
+    <None Include="Resources\Booking_100px.png" />
+    <None Include="Resources\icons8_Notification_32.png" />
+    <None Include="Resources\Time Machine_64px.png" />
+    <None Include="Resources\Test Passed_50px.png" />
+    <None Include="Resources\Cash in Hand_50px.png" />
+    <None Include="Resources\icons8_Edit_16.png" />
+    <None Include="Resources\icons8_Delete_User_Male_16.png" />
+    <None Include="Resources\icons8_Add_16.png" />
+    <None Include="Resources\icons8_Driver_16.png" />
+    <None Include="Resources\icons8_Bus_16.png" />
+    <None Include="Resources\11-coach-centre.jpg" />
+    <None Include="Resources\Windows-Admin-Header-670x335.jpg" />
+    <None Include="Resources\advanceyourskillsasanazureitadmin_lp_1200x630-1521739158070.jpg" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\Driver_100px.png" />
+    <None Include="Resources\Bus_100px.png" />
+    <None Include="Resources\Exit_96px.png" />
+    <None Include="Resources\Database Administrator_96px.png" />
+    <None Include="Resources\User_100px.png" />
+    <None Include="Resources\photo-1517606400858-ba377e7e66d7.jpg" />
+    <None Include="Resources\kisspng-tour-bus-service-scania-ab-coach-bus-5ab77e337f51f8.5218496715219748355215.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusReservation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusReservation.edmx</DependentUpon>
+      <LastGenOutput>BusReservation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BusReservation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusReservation.edmx</DependentUpon>
+      <LastGenOutput>BusReservation.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
